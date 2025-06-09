@@ -1,5 +1,9 @@
 🎓 CurioQuiz
 
+Deployment:
+You can access the live deployed version of CurioQuiz here:  
+[https://curioquiz.onrender.com](https://curioquiz.onrender.com)
+
 CurioQuiz is an intelligent web application designed to generate and administer multiple-choice questions (MCQs) from input text using advanced Natural Language Processing (NLP) techniques. It enables users to create quizzes dynamically, attempt them, and track their performance over time.
 
 📑 Table of Contents
