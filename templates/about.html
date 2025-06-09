@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - CurioQuiz</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      :root {
+        --primary: rgb(44, 212, 227);
+        --secondary: rgb(37, 213, 233);
+        --light: #f8f9fa;
+        --dark: #212529;
+        --gray: #6c757d;
+        --skyblue: #87ceeb;
+        --skyblue-light: #e0f7fa;
+        --skyblue-dark: #4fc3f7;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--dark);
+        margin: 0;
+        padding: 0;
+        background-color: #b1eef2;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      header {
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: var(--primary);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--dark);
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: var(--primary);
+      }
+
+      .hero {
+        text-align: center;
+        padding: 3rem 0;
+        background: linear-gradient(135deg, #f5f7ff 0%, #e8ecff 100%);
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--primary);
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        color: var(--gray);
+        max-width: 700px;
+        margin: 0 auto 2rem;
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin: 3rem 0;
+      }
+
+      .feature-card {
+        background: white;
+        border-radius: 10px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature-card h2 {
+        color: var(--primary);
+        margin-top: 1rem;
+      }
+
+      .feature-icon {
+        font-size: 2.5rem;
+        color: var(--primary);
+      }
+
+      .how-it-works {
+        background: white;
+        border-radius: 10px;
+        padding: 3rem;
+        margin: 3rem 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .steps {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+        gap: 1.5rem;
+      }
+
+      .step {
+        flex: 1;
+        min-width: 200px;
+        text-align: center;
+        padding: 1.5rem;
+        position: relative;
+      }
+
+      .step-number {
+        background: var(--primary);
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      .step h3 {
+        color: var(--primary);
+      }
+
+      /* Updated Why Us Section */
+      .why-us {
+        padding: 3rem 0;
+        margin: 3rem 0;
+      }
+
+      .why-us h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: var(--primary);
+      }
+
+      .benefits-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .benefit-box {
+        background: rgb(237, 253, 255);
+        border-radius: 10px;
+        padding: 1.5rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        border-top: 4px solid var(--skyblue);
+      }
+
+      .benefit-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        border-top-color: var(--primary);
+      }
+
+      .benefit-box h3 {
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+      }
+
+      .benefit-box p {
+        color: var(--gray);
+        margin: 0;
+      }
+
+      .benefit-icon {
+        font-size: 1.8rem;
+        color: var(--skyblue);
+        margin-bottom: 1rem;
+        transition: color 0.3s;
+      }
+
+      .benefit-box:hover .benefit-icon {
+        color: var(--primary);
+      }
+
+      .testimonial {
+        background: white;
+        border-radius: 10px;
+        padding: 2rem;
+        margin: 3rem 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        position: relative;
+        transition: transform 0.3s;
+      }
+
+      .testimonial:hover {
+        transform: scale(1.02);
+      }
+
+      .testimonial:before {
+        content: '"';
+        font-size: 5rem;
+        color: rgba(67, 97, 238, 0.1);
+        position: absolute;
+        top: 10px;
+        left: 20px;
+      }
+
+      .testimonial p {
+        font-size: 1.1rem;
+        font-style: italic;
+        position: relative;
+        z-index: 1;
+      }
+
+      .testimonial-author {
+        font-weight: bold;
+        margin-top: 1rem;
+        color: var(--primary);
+      }
+
+      /* Updated Team Section */
+      .team-section {
+        margin: 2rem 0;
+      }
+
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .team-member {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .team-member:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .member-image {
+        height: 150px;
+        background-color: #e8ecff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary);
+        font-size: 2rem;
+        transition: all 0.3s ease;
+      }
+
+      .team-member:hover .member-image {
+        background-color: var(--skyblue-light);
+      }
+
+      .member-info {
+        padding: 1rem;
+        text-align: center;
+      }
+
+      .member-info h3 {
+        margin: 0.5rem 0;
+        color: var(--primary);
+        font-size: 1rem;
+      }
+
+      .member-info p {
+        color: var(--gray);
+        margin: 0;
+        font-size: 0.9rem;
+      }
+
+      .member-id {
+        font-family: monospace;
+        background: #f0f2ff;
+        padding: 0.2rem 0.4rem;
+        border-radius: 5px;
+        display: inline-block;
+        margin-top: 0.5rem;
+        font-size: 0.8rem;
+      }
+
+      .cta {
+        text-align: center;
+        margin: 3rem 0;
+      }
+
+      .btn {
+        display: inline-block;
+        background: var(--primary);
+        color: white;
+        padding: 0.8rem 1.8rem;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(67, 97, 238, 0.3);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn:hover {
+        background: var(--secondary);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(67, 97, 238, 0.4);
+      }
+
+      .btn:active {
+        transform: translateY(1px);
+      }
+
+      .btn::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 5px;
+        height: 5px;
+        background: rgba(255, 255, 255, 0.5);
+        opacity: 0;
+        border-radius: 100%;
+        transform: scale(1, 1) translate(-50%);
+        transform-origin: 50% 50%;
+      }
+
+      .btn:focus:not(:active)::after {
+        animation: ripple 1s ease-out;
+      }
+
+      @keyframes ripple {
+        0% {
+          transform: scale(0, 0);
+          opacity: 0.5;
+        }
+        100% {
+          transform: scale(20, 20);
+          opacity: 0;
+        }
+      }
+
+      .stats {
+        background: rgb(255, 255, 255);
+        border-radius: 10px;
+        padding: 2rem;
+        margin: 2rem 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .stats:hover {
+        transform: scale(1.01);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .stats p {
+        font-size: 1.1rem;
+        color: var(--gray);
+      }
+
+      .stats strong {
+        color: var(--primary);
+      }
+
+      /* Footer Styling */
+      footer {
+        background: rgba(0, 0, 0, 0.1);
+        color: rgb(21, 19, 19);
+        padding: 40px 20px;
+        text-align: center;
+      }
+
+      .footer-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: auto;
+        padding-bottom: 20px;
+      }
+
+      .footer-info,
+      .footer-social,
+      .footer-contact {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+
+      .footer-info h2 {
+        color: #0b0c0c;
+        margin-bottom: 10px;
+      }
+
+      .footer-info p {
+        font-size: 24px;
+        opacity: 0.8;
+      }
+
+      .footer-social h3,
+      .footer-contact h3 {
+        margin-bottom: 15px;
+        font-size: 18px;
+      }
+
+      .footer-contact a {
+        color: #0a0a0a;
+        text-decoration: none;
+      }
+
+      .footer-contact a:hover {
+        text-decoration: underline;
+      }
+
+      /* Social Icons */
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .social-icon {
+        font-size: 24px;
+        color: rgb(11, 10, 10);
+        text-decoration: none;
+        transition: transform 0.3s ease, color 0.3s ease;
+        padding: 10px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+
+      /* Hover effects with platform colors */
+      #insta:hover {
+        color: #e4405f;
+        transform: scale(1.2);
+        background: #fff;
+        border-radius: 50%;
+      }
+      #google:hover {
+        color: #db4437;
+        transform: scale(1.2);
+        background: #fff;
+        border-radius: 50%;
+      }
+      #twitter:hover {
+        color: #1da1f2;
+        transform: scale(1.2);
+        background: #fff;
+        border-radius: 50%;
+      }
+      #facebook:hover {
+        color: #3b5998;
+        transform: scale(1.2);
+        background: #fff;
+        border-radius: 50%;
+      }
+
+      .footer-bottom {
+        margin-top: 20px;
+        font-size: 14px;
+        opacity: 0.7;
+      }
+      .navbar-custom {
+        background-color: #60dff3;
+      }
+      .navbar-custom .navbar-brand,
+      .navbar-custom .nav-link {
+        color: rgb(13, 13, 13);
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+      .navbar-custom .nav-link:hover,
+      .navbar-custom .nav-link.active {
+        color: #2cc0cb;
+      }
+
+      .navbar-brand img {
+        height: 40px;
+        width: 40px;
+        padding-left: 0%;
+        margin-right: 10px;
+        border-radius: 100px;
+        object-fit: contain;
+        background-size: 80%;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+      <div class="container-fluid px-5">
+        <a
+          class="navbar-brand d-flex align-items-center"
+          href="{{ url_for('home') }}"
+        >
+          <img
+            src="{{ url_for('static', filename='logo55.png') }}"
+            alt="CurioQuiz Logo"
+          />
+          CurioQuiz
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon" style="filter: invert(1)"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('home') }}">
+                <i class="fa-solid fa-home"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('generate') }}">
+                <i class="fa-solid fa-question-circle"></i> Generate Quiz
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('history') }}">
+                <i class="fas fa-history"></i> History
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('login') }}">
+                <i class="fa-solid fa-right-from-bracket me-1"></i> Logout
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main class="container">
+      <section class="hero">
+        <h1>About CurioQuiz</h1>
+        <p>
+          An MCQ generation system that uses NLP to create educational
+          assessment questions from input text.
+        </p>
+      </section>
+
+      <section class="features">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+          <h2>Fast Generation</h2>
+          <p>
+            Generate multiple-choice questions instantly from your educational
+            content, saving hours of manual work.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-brain"></i></div>
+          <h2>Intelligent Analysis</h2>
+          <p>
+            Our NLP algorithms identify key concepts and extract the most
+            important information for creating relevant questions.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-edit"></i></div>
+          <h2>Editorial Results</h2>
+          <p>
+            Not completely satisfied with a generated question? Edit any part of
+            the question or options to refine it to your needs.
+          </p>
+        </div>
+      </section>
+
+      <section class="how-it-works">
+        <h2 style="text-align: center; color: var(--primary)">How It Works</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Input Your Text</h3>
+            <p>Paste your educational content or lecture notes</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>NLP Processing</h3>
+            <p>Our algorithms analyze key concepts and entities</p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>MCQ Generation</h3>
+            <p>Questions and plausible options are created</p>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3>Review & Export</h3>
+            <p>Edit if needed and export for your use</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="why-us">
+        <h2>Why Choose CurioQuiz?</h2>
+        <div class="benefits-container">
+          <div class="benefit-box">
+            <div class="benefit-icon"><i class="fas fa-clock"></i></div>
+            <h3>Time-Saving</h3>
+            <p>Generate questions in seconds, not hours</p>
+          </div>
+
+          <div class="benefit-box">
+            <div class="benefit-icon"><i class="fas fa-star"></i></div>
+            <h3>Quality Questions</h3>
+            <p>NLP algorithms ensure relevance</p>
+          </div>
+
+          <div class="benefit-box">
+            <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
+            <h3>Plausible Options</h3>
+            <p>Smart distractor generation</p>
+          </div>
+
+          <div class="benefit-box">
+            <div class="benefit-icon"><i class="fas fa-sliders-h"></i></div>
+            <h3>Flexibility</h3>
+            <p>Edit any aspect of generated questions</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="stats">
+        <p>
+          <strong>Did you know?</strong> Teachers spend an average of 7-10 hours
+          per week creating assessments. CurioQuiz can reduce this time by up to
+          80%.
+        </p>
+      </div>
+
+      <div class="testimonial">
+        <p>
+          CurioQuiz transformed how I create quizzes for my students. What used
+          to take hours now takes minutes!
+        </p>
+        <div class="testimonial-author">- Prof. Ramesh Babu</div>
+      </div>
+
+      <section class="team-section">
+        <h2 style="text-align: center; color: var(--primary)">Meet Our Team</h2>
+        <p
+          style="
+            text-align: center;
+            max-width: 700px;
+            margin: 1rem auto 2rem;
+            color: var(--gray);
+          "
+        >
+          This project was built as part of a Mini Project at Shri Vishnu
+          Engineering College for Women, Bhimavaram.
+        </p>
+
+        <div class="team-grid">
+          <div class="team-member">
+            <div class="member-image">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="member-info">
+              <h3>Somu Naga Venkata Sri Sai Akshaya</h3>
+              <p>Developer & Designer</p>
+              <div class="member-id">23B01A05H3</div>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="member-image">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="member-info">
+              <h3>Sabhavatu Bhavani</h3>
+              <p>Frontend</p>
+              <div class="member-id">23B01A05G0</div>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="member-image">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="member-info">
+              <h3>Pulagam Swathi</h3>
+              <p>Backend</p>
+              <div class="member-id">23B01A05E9</div>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="member-image">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="member-info">
+              <h3>Valavala Hrishitha</h3>
+              <p>NLP</p>
+              <div class="member-id">23B01A05I4</div>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="member-image">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="member-info">
+              <h3>Rekhala Mahathi</h3>
+              <p>Testing</p>
+              <div class="member-id">23B01A05F6</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="cta">
+        <a href="{{ url_for('generate') }}" class="btn">Try CurioQuiz Now</a>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-info">
+          <h2>Curio Quiz</h2>
+          <p>"Your MCQ generator — create quizzes instantly"</p>
+        </div>
+
+        <div class="footer-social">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#" class="social-icon" id="insta"
+              ><i class="fa fa-instagram"></i
+            ></a>
+            <a href="#" class="social-icon" id="google"
+              ><i class="fa fa-google"></i
+            ></a>
+            <a href="#" class="social-icon" id="twitter"
+              ><i class="fa fa-twitter"></i
+            ></a>
+            <a href="#" class="social-icon" id="facebook"
+              ><i class="fa fa-facebook"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <p>
+            Email:
+            <a href="mailto:support@digitaldiary.com">support@curioquiz.com</a>
+          </p>
+          <p>Phone: +1 (123) 456-7890</p>
+        </div>
+      </div>
+
+      <p class="footer-bottom">© 2025 CurioQuiz. All rights reserved.</p>
+    </footer>
+
+    <script>
+      // Add simple interactive effects
+      document.addEventListener("DOMContentLoaded", function () {
+        // Add ripple effect to buttons
+        const buttons = document.querySelectorAll(".btn");
+        buttons.forEach((button) => {
+          button.addEventListener("click", function (e) {
+            let x = e.clientX - e.target.getBoundingClientRect().left;
+            let y = e.clientY - e.target.getBoundingClientRect().top;
+
+            let ripples = document.createElement("span");
+            ripples.style.left = x + "px";
+            ripples.style.top = y + "px";
+            this.appendChild(ripples);
+
+            setTimeout(() => {
+              ripples.remove();
+            }, 1000);
+          });
+        });
+
+        // Add animation to team members on hover
+        const teamMembers = document.querySelectorAll(".team-member");
+        teamMembers.forEach((member) => {
+          member.addEventListener("mouseenter", function () {
+            this.querySelector(".member-image i").style.transform =
+              "scale(1.1)";
+          });
+
+          member.addEventListener("mouseleave", function () {
+            this.querySelector(".member-image i").style.transform = "scale(1)";
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

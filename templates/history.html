@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quiz History by Date</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      .mcq-card {
+        margin-bottom: 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease;
+      }
+      .mcq-card:hover {
+        transform: scale(1.02);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+      }
+      .option-list li {
+        margin-bottom: 0.3rem;
+      }
+      .correct-answer {
+        font-weight: bold;
+        color: #198754; /* Bootstrap green */
+      }
+      .difficulty-badge {
+        float: right;
+      }
+      .btn-secondary mt-3 {
+        color: #0c5fd7;
+        border-radius: 25px;
+        padding: 10px 25px;
+        font-weight: 600;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-secondary mt-3:hover {
+        transform: scale(1.05);
+        color: #0c5fd6;
+      }
+      body {
+        background-color: #c2f2f9;
+      }
+      .navbar-custom {
+        background-color: #60dff3;
+      }
+      .navbar-custom .navbar-brand,
+      .navbar-custom .nav-link {
+        color: rgb(13, 13, 13);
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+      .navbar-custom .nav-link:hover,
+      .navbar-custom .nav-link.active {
+        color: #2cc0cb;
+      }
+
+      .navbar-brand img {
+        height: 40px;
+        width: 40px;
+        padding-left: 0%;
+        margin-right: 10px;
+        border-radius: 100px;
+        object-fit: contain;
+        background-size: 80%;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+      <div class="container-fluid px-5">
+        <a
+          class="navbar-brand d-flex align-items-center"
+          href="{{ url_for('home') }}"
+        >
+          <img
+            src="{{ url_for('static', filename='logo55.png') }}"
+            alt="CurioQuiz Logo"
+          />
+          CurioQuiz
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon" style="filter: invert(1)"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('home') }}">
+                <i class="fa-solid fa-home"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('about') }}">
+                <i class="fas fa-info-circle"></i> About
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('generate') }}">
+                <i class="fa-solid fa-question-circle"></i> Generate Quiz
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('login') }}">
+                <i class="fa-solid fa-right-from-bracket me-1"></i> Logout
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container mt-5">
+      <h2 class="mb-4">Your Generated Questions History</h2>
+
+      {% if sorted_dates %} {% for date in sorted_dates %}
+      <div class="mb-5">
+        <h4 class="bg-primary text-white p-3 rounded">{{ date }}</h4>
+
+        {% for mcq in grouped_mcqs[date] %}
+        <div class="card mcq-card p-3 mb-3">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h5 class="card-title mb-0">{{ mcq.question }}</h5>
+            <span class="badge bg-info difficulty-badge text-dark">
+              {{ mcq.difficulty | capitalize or 'N/A' }}
+            </span>
+          </div>
+          <ul class="list-unstyled option-list mb-2">
+            {% for option in mcq.options.split('||') %} {% if option ==
+            mcq.answer %}
+            <li class="correct-answer">✔ {{ option }}</li>
+            {% else %}
+            <li>{{ option }}</li>
+            {% endif %} {% endfor %}
+          </ul>
+          <p>
+            <strong>Answer:</strong>
+            <span class="correct-answer">{{ mcq.answer }}</span>
+          </p>
+        </div>
+        {% endfor %}
+      </div>
+      {% endfor %} {% else %}
+      <p>No generated questions found.</p>
+      {% endif %}
+    </div>
+  </body>
+</html>
