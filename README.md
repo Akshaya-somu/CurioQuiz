@@ -140,6 +140,6 @@ Contact:
 Akshaya Somu
 Department of Computer Science and Engineering
 Shri Vishnu Engineering College for Women, Bhimavaram
-Email: \[[your-email@example.com](mailto:akshayasomu2005@gmail.com)] 
+Email: [(mailto:akshayasomu2005@gmail.com)] 
 
 
