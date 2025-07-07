@@ -1,72 +1,132 @@
-🎓 CurioQuiz
+---
 
-Deployment:
-You can access the live deployed version of CurioQuiz here:  
-[https://curioquiz.onrender.com](https://curioquiz.onrender.com)
+# 🎓 CurioQuiz
 
-CurioQuiz is an intelligent web application designed to generate and administer multiple-choice questions (MCQs) from input text using advanced Natural Language Processing (NLP) techniques. It enables users to create quizzes dynamically, attempt them, and track their performance over time.
+**Live Deployment:**
+🌐 [https://curioquiz.onrender.com](https://curioquiz.onrender.com)
 
-📑 Table of Contents
+CurioQuiz is an intelligent web application that automatically generates multiple-choice questions (MCQs) from input text using advanced Natural Language Processing (NLP). It enables users to dynamically create, attempt, and track quizzes—making it ideal for both students and educators.
 
-* 📘 Project Overview
-* ✨ Features
-* 🛠️ Technologies Used
-* ⚙️ Installation
-* 🚀 Usage
-* 🗂️ Project Structure
-* 🤝 Contributing
-* 📄 License
-* 📬 Contact
+---
 
-📘 Project Overview
-CurioQuiz aims to automate the generation of multiple-choice questions based on user-provided text inputs. This is particularly useful for educators and students to create quizzes for study or evaluation purposes quickly. The system supports user registration and login to personalize quiz data and tracks quiz history, allowing users to review past attempts.
+## 📑 Table of Contents
 
-The backend leverages Flask, a lightweight Python web framework, combined with NLP libraries like spaCy to parse and extract meaningful information from the text. The frontend uses Bootstrap and JavaScript to create a responsive and user-friendly interface.
+* [📘 Project Overview](#-project-overview)
+* [✨ Features](#-features)
+* [🛠️ Technologies Used](#-technologies-used)
+* [⚙️ Installation](#-installation)
+* [🚀 Usage](#-usage)
+* [🗂️ Project Structure](#-project-structure)
+* [🤝 Contributing](#-contributing)
+* [📄 License](#-license)
+* [📬 Contact](#-contact)
 
-✨ Features
+---
 
-* Automated MCQ Generation: Converts raw text input into meaningful multiple-choice questions
-* User Authentication: Secure registration, login, and logout functionalities
-* Quiz History Tracking: View past quizzes, filter by date or difficulty
-* Responsive UI: Clean and intuitive interface powered by Bootstrap
-* Difficulty Levels: Customize quizzes with easy, medium, and hard levels
+## 📘 Project Overview
 
-🛠️ Technologies Used
+CurioQuiz aims to automate the creation of MCQs from raw input text using NLP techniques. It provides user authentication, tracks quiz history, and offers a smooth and responsive experience for quiz generation, attempting, and review.
 
-* Backend: Python, Flask, spaCy
-* Frontend: HTML5, CSS3, JavaScript, Bootstrap
-* Database: SQLite (can be upgraded to PostgreSQL or MySQL)
-* Version Control: Git, GitHub
+* Designed for educators, students, and self-learners
+* Backend powered by **Flask** and **spaCy**
+* Frontend built with **Bootstrap** and **JavaScript**
+* Persistent data tracking through user authentication and history logs
 
-⚙️ Installation
+---
 
-1. Clone the repository:
-   git clone [https://github.com/Akshaya-somu/CurioQuiz.git](https://github.com/Akshaya-somu/CurioQuiz.git)
+## ✨ Features
+
+✅ **Automated MCQ Generation**
+→ Paste text and instantly receive intelligent multiple-choice questions.
+
+✅ **User Authentication**
+→ Secure registration, login, and logout functionalities.
+
+✅ **Quiz History Tracking**
+→ Review previous attempts and filter by date or difficulty level.
+
+✅ **Responsive UI**
+→ Built using Bootstrap for seamless experience across devices.
+
+✅ **Difficulty Levels**
+→ Option to generate quizzes with easy, medium, or hard-level questions.
+
+---
+
+## 🛠️ Technologies Used
+
+**Backend:**
+
+* Python
+* Flask
+* spaCy (NLP)
+
+**Frontend:**
+
+* HTML5
+* CSS3
+* JavaScript
+* Bootstrap
+
+**Database:**
+
+* SQLite (Upgradeable to PostgreSQL/MySQL)
+
+**Version Control:**
+
+* Git
+* GitHub
+
+---
+
+## ⚙️ Installation
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/Akshaya-somu/CurioQuiz.git
    cd CurioQuiz
+   ```
 
-2. Set up a virtual environment:
+2. **Set up a virtual environment**
+
+   ```bash
    python -m venv venv
+   ```
 
-3. Activate the environment
+3. **Activate the environment**
 
-   * On Windows: venv\Scripts\activate
-   * On macOS/Linux: source venv/bin/activate
+   * Windows:
+     `venv\Scripts\activate`
+   * macOS/Linux:
+     `source venv/bin/activate`
 
-4. Install dependencies:
+4. **Install dependencies**
+
+   ```bash
    pip install -r requirements.txt
+   ```
 
-5. Run the application:
+5. **Run the application**
+
+   ```bash
    flask run
+   ```
 
-6. Open in browser:
+6. **Visit the app**
+   Open your browser and go to:
    [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
-🚀 Usage
+---
 
-* Register or login
-* Paste input text to generate MCQs
-* Attempt quizzes and submit answers
-* View quiz history with filters
+## 🚀 Usage
+
+1. Register or log in
+2. Paste your text to generate MCQs
+3. Attempt the quiz and submit your answers
+4. View and filter your quiz history
+
+---
 
 🗂️ Project Structure
 CurioQuiz/
@@ -78,21 +138,50 @@ CurioQuiz/
 ├── README.md – Project documentation
 └── venv/ – Virtual environment (usually excluded from GitHub)
 
-🤝 Contributing
+---
+
+## 🤝 Contributing
+
+We welcome contributions! 🚀
 
 1. Fork the repository
-2. Create a new branch: git checkout -b feature-name
-3. Commit your changes: git commit -m "Add feature"
-4. Push your branch: git push origin feature-name
-5. Open a pull request
+2. Create a new branch
 
-📄 License
-This project is licensed under the MIT License. You are free to use, modify, and distribute it.
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Make your changes
+4. Commit changes
 
-📬 Contact
-Akshaya Somu
+   ```bash
+   git commit -m "Add feature"
+   ```
+5. Push to your fork
+
+   ```bash
+   git push origin feature-name
+   ```
+6. Open a Pull Request
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
+Feel free to use, modify, and distribute it.
+
+---
+
+## 📬 Contact
+
+**Akshaya Somu**
 Department of Computer Science and Engineering
 Shri Vishnu Engineering College for Women, Bhimavaram
-Email: [akshayasomu2005@gmail.com](mailto:akshayasomu2005@gmail.com)
+📧 Email: [akshayasomu2005@gmail.com](mailto:akshayasomu2005@gmail.com)
+
+---
+
+
+
 
 
