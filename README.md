@@ -53,10 +53,9 @@ The backend leverages Flask, a lightweight Python web framework, combined with N
 ## ⚙️ Installation
 
 1. **Clone the repository:**
-   ```bash
+   
    git clone https://github.com/Akshaya-somu/CurioQuiz.git
    cd CurioQuiz
-````
 
 2. **Set up a virtual environment:**
 
@@ -105,7 +104,6 @@ The backend leverages Flask, a lightweight Python web framework, combined with N
 
 ## 🗂️ Project Structure
 
-```
 CurioQuiz/
 ├── app.py                # Main Flask app
 ├── requirements.txt      # Python dependencies
@@ -114,7 +112,7 @@ CurioQuiz/
 ├── models.py             # Database models
 ├── README.md             # Project documentation
 └── venv/                 # Virtual environment (usually excluded from GitHub)
-```
+
 
 ---
 
@@ -154,4 +152,3 @@ Department of Computer Science and Engineering
 Shri Vishnu Engineering College for Women, Bhimavaram
 📧 Email: [akshayasomu2005@gmail.com](mailto:akshayasomu2005@gmail.com)
 
-```
