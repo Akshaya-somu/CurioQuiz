@@ -103,7 +103,7 @@ The backend leverages Flask, a lightweight Python web framework, combined with N
 ---
 
 ## 🗂️ Project Structure
-
+---
 CurioQuiz/
 ├── app.py                # Main Flask app
 ├── requirements.txt      # Python dependencies
@@ -112,7 +112,7 @@ CurioQuiz/
 ├── models.py             # Database models
 ├── README.md             # Project documentation
 └── venv/                 # Virtual environment (usually excluded from GitHub)
-
+---
 
 ---
 
