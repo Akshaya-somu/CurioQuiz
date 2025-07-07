@@ -2,7 +2,7 @@
 
 # 🎓 CurioQuiz
 
-**Live Deployment:**
+Live Deployment:
 🌐 [https://curioquiz.onrender.com](https://curioquiz.onrender.com)
 
 CurioQuiz is an intelligent web application that automatically generates multiple-choice questions (MCQs) from input text using advanced Natural Language Processing (NLP). It enables users to dynamically create, attempt, and track quizzes—making it ideal for both students and educators.
@@ -36,26 +36,26 @@ CurioQuiz aims to automate the creation of MCQs from raw input text using NLP te
 
 ## ✨ Features
 
-✅ **Automated MCQ Generation**
+✅ Automated MCQ Generation
 → Paste text and instantly receive intelligent multiple-choice questions.
 
-✅ **User Authentication**
+✅ User Authentication
 → Secure registration, login, and logout functionalities.
 
-✅ **Quiz History Tracking**
+✅ Quiz History Tracking
 → Review previous attempts and filter by date or difficulty level.
 
-✅ **Responsive UI**
+✅ Responsive UI
 → Built using Bootstrap for seamless experience across devices.
 
-✅ **Difficulty Levels**
+✅ Difficulty Levels
 → Option to generate quizzes with easy, medium, or hard-level questions.
 
 ---
 
 ## 🛠️ Technologies Used
 
-**Backend:**
+Backend:
 
 * Python
 * Flask
